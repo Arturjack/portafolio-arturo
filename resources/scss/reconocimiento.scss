@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+*{
+    box-sizing:border-box ;
+    margin: 0;
+    padding: 0;
+}
+
+// .galeria{
+//     background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+//     url('/public/images/gradiente.jpg');
+//     background-size: cover;
+//     height: 100vh;
+//     color: #fff;
+//     display: flex;
+//     align-items: center;
+// }
+
+#fondo{ 
+    min-height: 100vh;
+    // background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+    background: linear-gradient(-45deg, #1c1c1d81, #1b1b1b, #14181a,rgba(30,35,38,.8), rgba(30,35,38,1));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: white;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body{
+    background: #1e2326;
+}
+
+
+h1{
+    font-weight: 400;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+    color: #fff;
+}
+
+.linea{
+    background: rgb(187, 187, 187);
+    height: 5px;
+    width: 100%;
+    display: block;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    width: 95%;
+    margin: auto;
+    grid-gap: 10px ;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.galeria img{
+    width: 100%;
+    vertical-align: top;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.galeria >a{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    border-radius: 8px;
+}
+
+.galeria a:hover img{
+    filter: blur(2px);
+    transform: rotate(10deg) scale(1.3);
+
+}
+
+.light-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    transition: transform .3s ease-in-out;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    transform:scale(0) ;
+}
+
+.light-box img{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.light-box:target{
+    transform: scale(1);
+}
+
+.close{
+    display: block;
+    position: absolute;
+    top:40px;
+    right: 40px;
+    background: #1CB698;
+    color: #fff;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+.close:hover{
+    background: #851919;
+}
+
+.next{
+    display: block;
+    background: #1CB698;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 45px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next:hover{
+    background: #16a085;
+}
+
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    .galeria{
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        grid-gap: 8px;
+        padding: 20px 0;
+    }
+    
+    .galeria img{
+        height: 200px;
+    }
+    
+    h1{
+        font-size: 32px;
+        padding: 15px 0;
+    }
+    
+    .close, .next{
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+    }
+    
+    .close{
+        top: 20px;
+        right: 20px;
+    }
+    
+    .next:first-of-type{
+        left: 20px;
+    }
+    
+    .next:last-of-type{
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria{
+        grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+        grid-gap: 5px;
+    }
+    
+    .galeria img{
+        height: 150px;
+    }
+    
+    h1{
+        font-size: 28px;
+    }
+}
+
+.encabezado {
+    position: relative;
+    display: flex;
+    align-items: center; // Alinea verticalmente h1 y botón
+    justify-content: center; // Puedes cambiarlo a start o left si no quieres separación total
+    margin-bottom: 20px; // Espaciado inferior si lo necesitas
+}
+.encabezado h1 {
+    margin: 0; // Elimina margen por defecto
+    font-weight: 400;
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+// h1{
+//     font-weight: 400;
+//     font-family: 'Righteous';
+//     text-align: center;
+//     padding: 20px 0;
+//     font-size: 40px;
+//     color: #fff;
+// }
