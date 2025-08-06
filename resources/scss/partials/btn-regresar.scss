@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+.btn-regresar {
+    position: absolute;
+    left: 0; // Pega el botón al lado izquierdo
+    background: #1CB698;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(28, 182, 152, 0.3);
+    margin-left: 20px;
+    
+    &:hover {
+        background: #16a085;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(28, 182, 152, 0.4);
+    }
+    
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(28, 182, 152, 0.3);
+    }
+    
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(28, 182, 152, 0.2);
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .btn-regresar {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-regresar {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
